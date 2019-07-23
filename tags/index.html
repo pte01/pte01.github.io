@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://pte01.github.io">
-  <title>pte01</title>
+  <title>tags | pte01</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="记录足迹的地方">
 <meta property="og:type" content="website">
-<meta property="og:title" content="pte01">
-<meta property="og:url" content="https://pte01.github.io/index.html">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="https://pte01.github.io/tags/index.html">
 <meta property="og:site_name" content="pte01">
 <meta property="og:description" content="记录足迹的地方">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-23T16:05:31.781Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pte01">
+<meta name="twitter:title" content="tags">
 <meta name="twitter:description" content="记录足迹的地方">
   
     <link rel="alternative" href="/atom.xml" title="pte01" type="application/atom+xml">
@@ -153,76 +154,122 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-我的第一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/23/我的第一篇文章/">hexo安装</a>
+    <h1 class="article-title" itemprop="name">
+      tags
     </h1>
   
 
         
-        <a href="/2019/07/23/我的第一篇文章/" class="archive-article-date">
-  	<time datetime="2019-07-23T05:05:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
+        <a href="/tags/index.html" class="archive-article-date">
+  	<time datetime="2019-07-23T16:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="windows环境下hexo安装"><a href="#windows环境下hexo安装" class="headerlink" title="windows环境下hexo安装"></a>windows环境下hexo安装</h1><h2 id="1-node-js和git的安装与配置"><a href="#1-node-js和git的安装与配置" class="headerlink" title="1.node.js和git的安装与配置"></a>1.node.js和git的安装与配置</h2><p>官网下载对应安装包后正常软件安装流程。。。<br>安装完后检查环境是否配置完成<br><img src="/images/1.png" alt="这样就表示没问题"><br>如果不行则配置环境变量如下<br><img src="/images/2.png" alt="这是我的环境变量PATH"><br>github创建个人仓库，仓库名字必须为：自己的GitHub用户名.github.io，这里黄色画笔圈出的部分会用到<br><img src="/images/3.png" alt="新建的仓库"><br>npm是node.js的包管理和分发工具，由于服务器在国外速度慢使用cnpm作为替代<br>安装cnpm（淘宝npm镜像）：<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>这里的-g指全局安装，可以在任意位置使用<br>git设置：<br>G:\blog&gt;git config –global user.name”tpe01”<br>G:\blog&gt;git config –global user.email”<a href="mailto:quzehua01@163.com" target="_blank" rel="noopener">quzehua01@163.com</a>“</p>
-<hr>
-<h2 id="2-hexo的安装"><a href="#2-hexo的安装" class="headerlink" title="2.hexo的安装"></a>2.hexo的安装</h2><p>cnpm install -g hexo-cli<br><img src="/images/4.png" alt="验证hexo是否装好"><br>创建并进入自己写博客用的文件夹G://blog<br>初始化：hexo init<br>我出现了如下错误：<br><img src="/images/5.png" alt="错误"><br>解决方案：<br>npm cache clean –force<br><a href="https://blog.csdn.net/qq_33431368/article/details/84258402" target="_blank" rel="noopener">来自这个博客</a><br>这样就表示初始化成功了：<br><img src="/images/6.png" alt="成功"><br>hexo clean 清除缓存<br>hexo g<br>hexo s 启动<br>这时候就可以通过<a href="http://localhost:4000访问自己的博客页面" target="_blank" rel="noopener">http://localhost:4000访问自己的博客页面</a><br><img src="/images/7.png" alt="博客界面"><br>当然，我们还需要将自己的博客部署到github上<br>首先修改配置文件.config.yml在文件末尾找到deploy作如下修改，其中的URL是自己的仓库地址.git<br><img src="/images/8.png" alt="配置文件修改"><br>hexo d  将自己的博客推到仓库里<br>第一次需要输入用户名和密码<br>成功后发现自己的仓库里多了一些文件<br><img src="/images/9.png" alt="仓库更新后"><br>现在可以通过访问自己的仓库来访问博客了<br><a href="https://pte01.github.io/">https://pte01.github.io/</a></p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>安装好nodejs和git并配置环境变量，创建git仓库<br>安装cnpm取代npm保证下载速度<br>使用cnpm安装hexo<br>在指定文件夹下初始化hexo<br>使用hexo -d将hexo推到github</p>
-
+        
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件安装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/杂谈//" class="article-tag-list-link color3">杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/23/我的第一篇文章/">展开全文 >></a>
-        </p>
       
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://pte01.github.io/tags/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -237,13 +284,32 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
+  
+
   
 
 
@@ -266,7 +332,7 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
