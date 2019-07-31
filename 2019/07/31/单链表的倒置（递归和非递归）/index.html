@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="pte01">
 <meta property="og:description" content="链表倒置干货之前的一点废话   自己下意识的觉得数据结构对编程来说应该是基础而且重要的东西。毕竟关于各种语言的特性，只能在大量的使用中渐渐领悟，而关于数据结构，关于算法却是在各种语言中通用的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pte01.github.io/2019/07/31/单链表的倒置（递归和非递归）/%E5%8D%95%E9%93%BE%E8%A1%A8%E7%A4%BA%E6%84%8F%E5%9B%BE">
-<meta property="og:updated_time" content="2019-07-31T02:24:24.789Z">
+<meta property="og:image" content="https://pte01.github.io/images/15.jpg">
+<meta property="og:updated_time" content="2019-07-31T02:45:14.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单链表的倒置（递归和非递归）">
 <meta name="twitter:description" content="链表倒置干货之前的一点废话   自己下意识的觉得数据结构对编程来说应该是基础而且重要的东西。毕竟关于各种语言的特性，只能在大量的使用中渐渐领悟，而关于数据结构，关于算法却是在各种语言中通用的。">
-<meta name="twitter:image" content="https://pte01.github.io/2019/07/31/单链表的倒置（递归和非递归）/%E5%8D%95%E9%93%BE%E8%A1%A8%E7%A4%BA%E6%84%8F%E5%9B%BE">
+<meta name="twitter:image" content="https://pte01.github.io/images/15.jpg">
   
     <link rel="alternative" href="/atom.xml" title="pte01" type="application/atom+xml">
   
@@ -184,7 +184,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void main()&#123;</span><br><span class="line">	int a=2;</span><br><span class="line">	int *b=&amp;a;   //这行代码也可以变成这样：int *b=NULL; b=&amp;a;就是说int *b=&amp;a; 中的*只是为了声明b是一个指针，在程序的其它地方*b表示一个整型变量，是不能用一个地址给它赋值的。</span><br><span class="line">	if(&amp;a==b)</span><br><span class="line">		printf(&quot;&amp;a = b&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>  最后再来总结一下，p是一个指针变量。<br>  那么<code>&amp;p</code>就表示存储p变量的地址，<code>p</code>表示&amp;p这个地址中存储的值，也是一个地址，通俗的讲就是指针p所指变量的地址,而*p则表示指针p所指的变量。也就是p所指的地址中保存的值 </p>
-<h3 id="C语言实现单链表"><a href="#C语言实现单链表" class="headerlink" title="C语言实现单链表"></a>C语言实现单链表</h3><p>  要实现链表的倒置，我们应该先明确链表是什么。<br>  <img src="%E5%8D%95%E9%93%BE%E8%A1%A8%E7%A4%BA%E6%84%8F%E5%9B%BE" alt="/images/15.jpg"><br>  这里为什么要明确头结点和尾节点的概念呢，只有知道头结点和尾节点在哪，你才能找到自己分配给每一个结点的内存，在不需要它的时候，才能准确地把它释放掉。<br>  链表的名字已经告诉了我们它是像铁链一样一环扣一环的东西。而它的每一环是这样的：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  typedef struct LNode&#123;</span><br><span class="line">	int data;</span><br><span class="line">	struct LNode * next;</span><br><span class="line">&#125;LinkNode;</span><br></pre></td></tr></table></figure></p>
+<h3 id="C语言实现单链表"><a href="#C语言实现单链表" class="headerlink" title="C语言实现单链表"></a>C语言实现单链表</h3><p>  要实现链表的倒置，我们应该先明确链表是什么。<br>  <img src="/images/15.jpg" alt="单链表的示意图"><br>  这里为什么要明确头结点和尾节点的概念呢，只有知道头结点和尾节点在哪，你才能找到自己分配给每一个结点的内存，在不需要它的时候，才能准确地把它释放掉。<br>  链表的名字已经告诉了我们它是像铁链一样一环扣一环的东西。而它的每一环是这样的：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  typedef struct LNode&#123;</span><br><span class="line">	int data;</span><br><span class="line">	struct LNode * next;</span><br><span class="line">&#125;LinkNode;</span><br></pre></td></tr></table></figure></p>
 <p>这里有一点递归的思想，一个结构体中保存了两个变量，data保存的是这个节点的信息，在这个实例中它是整型的，而next则是与这个结构体相同类型的指针变量，它指向“下一节铁链”。</p>
 <p>在我们对链表有了一个概念之后，我们将试着造出一节节铁链并把它连起来。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void CreatList(int a[],LinkNode *L,int n)&#123;</span><br><span class="line">	</span><br><span class="line">	int i=0;</span><br><span class="line">	LinkNode *s1=L,*s2=NULL;</span><br><span class="line">	for(i=0;i&lt;n;i++)&#123;</span><br><span class="line">		printf(&quot;%d\n&quot;,i);</span><br><span class="line">		s2=(LinkNode *)malloc(sizeof(LinkNode));  //这里使用了动态分配内存的方法。</span><br><span class="line">		s2-&gt;data=a[i];</span><br><span class="line">		s1-&gt;next=s2;</span><br><span class="line">		s1=s2;</span><br><span class="line">	&#125;</span><br><span class="line">	s1-&gt;next=NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -466,19 +466,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安装配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,6 +475,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
               </li>
             
             <div class="clearfix"></div>
